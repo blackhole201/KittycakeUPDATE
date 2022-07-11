@@ -31,6 +31,25 @@
                         <a href="https://bscscan.com/token/0xc22e8114818a918260662375450e19ac73d32852"><img src="../assets/bscscan.png" alt=""> </a>
                     </figure>
                 </div>
+
+
+//Get metadata for one token. Ex: USDT token on ETH
+const options = {
+  chain: "eth",
+  addresses: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+};
+const tokenMetadata = await Moralis.Web3API.token.getTokenMetadata(options);
+
+//Get metadata for an array of tokens. Ex: USDT and USDC tokens on BSC
+const options = {
+  chain: "bsc",
+  addresses: [
+    "0x55d398326f99059ff775485246999027b3197955",
+    "0x0a385f86059e0b2a048171d78afd1f38558121f3",
+  ],
+};
+const tokenMetadata = await Moralis.Web3API.token.getTokenMetadata(options);
+
                 <div class="col-md-2">
                     <figure>
                         <a href="https://coinmarketcap.com/currencies/kittycake/"><img src="../assets/coinmarket.png" alt=""> </a>
